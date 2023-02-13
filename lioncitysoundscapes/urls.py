@@ -4,5 +4,6 @@ from . import views
 
 # URLConf
 urlpatterns = [
-    path('about/', views.about_page)
+    path('about/', views.about_page),
+    path('header/', views.header)
 ]
