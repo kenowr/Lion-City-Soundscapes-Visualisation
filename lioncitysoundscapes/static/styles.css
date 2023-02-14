@@ -2,3 +2,6 @@ body {
     background-color: lightblue;
     font-family: verdana;
   }
+
+/* map  */
+#map { height: 180px; }
