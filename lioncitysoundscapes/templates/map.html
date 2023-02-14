@@ -7,8 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lion City Soundscapes</title>
-  <!-- load css file -->
-  <link rel="stylesheet" href="{% static 'styles.css' %}" />
   <!-- leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -20,7 +18,7 @@
 
   <body>
     <!-- navigation header -->
-    {% include "header.html" %}
+    {% include "map-header.html" %}
 
     <!-- leaflet map -->
     <div id="map"></div>

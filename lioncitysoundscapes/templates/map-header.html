@@ -1,15 +1,19 @@
-{% load static %} <!-- load css files -->
+<!-- load css files -->
+{% load static %}
+<!-- Overpass font -->
+<link href='https://fonts.googleapis.com/css?family=Overpass' rel='stylesheet'>
+<!-- load css file -->
 <link rel="stylesheet" href="{% static 'styles.css' %}" />
 
-<header class="header">
-  <a href="about.html" class="header-logo">Lion City Soundscapes</a>
+<header class="map-header">
+  <a href="{% url 'about' %}" class="header-logo">Lion City Soundscapes</a>
 
   <nav class="navbar">
-    <a href="about.html">About</a>
-    <a href="resources.html">Resources</a>
-    <a href="map.html">Map</a>
-    <a href="recordings.html">Recordings</a>
-    <a href="contact.html">Contact</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="resources/">Resources</a>
+    <a href="#/" class="active">Map</a>
+    <a href="recordings/">Recordings</a>
+    <a href="contact/">Contact</a>
   </nav>
 </header>
 
