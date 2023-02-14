@@ -7,11 +7,17 @@ body {
 #map { 
   width: 100%;
   min-height: 100vh; 
+  position: absolute;
+  z-index: 50;
 }
 
 /* map header */
 .map-header {
-  /* position: absolute; */
+  width: 100% - 15px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 100;
   padding: 15px;
   background-color: #16161A;
   display: flex;
