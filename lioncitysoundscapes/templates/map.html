@@ -14,29 +14,17 @@
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
+  <!-- onemap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+  <script src="https://cdn.onemap.sg/leaflet/onemap-leaflet.js"></script>
 </head>
 
   <body>
     <!-- navigation header -->
     {% include "map-header.html" %}
 
-    <!-- leaflet map -->
-    <div id="map"></div>
-    <script> 
-      // configure map
-      var map = L.map('map', {
-        zoomControl: false                                              // remove top left zoom controls
-      }).setView([1.350270, 103.829959],12.3);                          // lat and long coordinates
-      
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: 
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
-
-      //zoom buttons to bottom right
-      L.control.zoom({ position: 'bottomright' }).addTo(map);
-    </script>
+    <div id='mapdiv'></div>
+    <script src="{% static 'map.js' %}"></script>
 
   </body>
 
