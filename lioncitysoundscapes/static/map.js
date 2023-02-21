@@ -1,15 +1,20 @@
 var center = L.bounds([1.56073, 105.11475], [1.16, 103.502]).getCenter();
-var map = L.map('mapdiv').setView([1.350270, 103.829959],13);
+var map = L.map('mapdiv', {
+    zoomControl: false                  // remove top left zoom controls
+}).setView([1.350270, 103.829959],13);  // lat and long coordinates + initial zoom
 
 var basemap = L.tileLayer('https://maps-{s}.onemap.sg/v3/Default/{z}/{x}/{y}.png', {
     detectRetina: true,
     maxZoom: 20,
-    minZoom: 13
+    minZoom: 11
 });
 
 map.setMaxBounds([[1.50073, 104.1147], [1.16, 103.602]]);
 
 basemap.addTo(map);
+
+// zoom buttons to bottom right
+L.control.zoom({ position: 'bottomright' }).addTo(map);
 
 function getLocation() {
     if (navigator.geolocation) {
