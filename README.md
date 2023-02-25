@@ -108,8 +108,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [x] Set up Django project
 - [ ] Set up Leaflet interactive map
-- [ ] Front-End 
-- [ ] Back-End
+- [ ] Other Pages: About, Resources, Recordings, Contact
 - [ ] AWS Integration
 - [ ] Admin Panel
 
