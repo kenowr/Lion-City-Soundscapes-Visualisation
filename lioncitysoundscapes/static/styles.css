@@ -50,3 +50,8 @@ body {
 .map-header nav .active {
   color: #FF8906;
 }
+
+/* leaflet map pop up */
+.leaflet-popup-tip-container {
+  left: 0%;
+}
