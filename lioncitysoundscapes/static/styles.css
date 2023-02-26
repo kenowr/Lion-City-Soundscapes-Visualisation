@@ -51,7 +51,11 @@ body {
   color: #FF8906;
 }
 
-/* leaflet map pop up */
+/* leaflet map CSS */
 .leaflet-popup-tip-container {
   left: 0%;
+}
+
+.leaflet-top .leaflet-control {
+  top: 50px;
 }
