@@ -34,47 +34,57 @@ $.get('../../static/locations.csv', function(csvString) {
     // For each row in data, create a marker and add it to the map
     for (var i in data) {
         var row = data[i];
+
         // data clean soundscape type for custom marker
         if (row.Type == 'F&E') {
+
             row.Type = fulloflifeExciting;
-            // create marker
+
+            // create marker, add it to layer, and push into array
             var marker = L.marker([
                 parseFloat(row.Latitude), 
                 parseFloat(row.Longitude)
             ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
             fulloflifeExciting_layer.addLayer(marker);
             fulloflifeExciting_array.push(marker);
-            console.log("marker pushed to F&E");
+
         } else if (row.Type == 'B&L') {
+
             row.Type = boringLifeless;
-            // create marker
+
+            // create marker, add it to layer, and push into array
             var marker = L.marker([
                 parseFloat(row.Latitude), 
                 parseFloat(row.Longitude)
             ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
+
             boringLifeless_layer.addLayer(marker);
             boringLifeless_array.push(marker);
-            console.log("marker pushed to B&L");
+
         } else if (row.Type == 'C&T') {
+
             row.Type = calmTranquil;
-            // create marker
+            
+            // create marker, add it to layer, and push into array
             var marker = L.marker([
                 parseFloat(row.Latitude), 
                 parseFloat(row.Longitude)
             ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
             calmTranquil_layer.addLayer(marker);
             calmTranquil_array.push(marker);
-            console.log("marker pushed to C&T");
+
         } else if (row.Type == 'C&R') {
+
             row.Type = chaoticRestless;
-            // create marker
+
+            // create marker, add it to layer, and push into array
             var marker = L.marker([
                 parseFloat(row.Latitude), 
                 parseFloat(row.Longitude)
             ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
             chaoticRestless_layer.addLayer(marker);
             chaoticRestless_array.push(marker);
-            console.log("marker pushed to C&R");
+            
         } else ( null );
     }
 });
