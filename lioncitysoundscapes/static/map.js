@@ -31,7 +31,7 @@ var LeafIcon = L.Icon.extend({
     }
 });
 var chaoticRestless = new LeafIcon({iconUrl: '../../static/images/customIcons/pink-marker.png'}),
-    lifeExciting = new LeafIcon({iconUrl: '../../static/images/customIcons/orange-marker.png'}),
+    fulloflifeExciting = new LeafIcon({iconUrl: '../../static/images/customIcons/orange-marker.png'}),
     calmTranquil = new LeafIcon({iconUrl: '../../static/images/customIcons/green-marker.png'}),
     boringLifeless = new LeafIcon({iconUrl: '../../static/images/customIcons/black-marker.png'});
 
@@ -48,10 +48,22 @@ $.get('../../static/locations.csv', function(csvString) {
     // For each row in data, create a marker and add it to the map
     for (var i in data) {
         var row = data[i];
+
+        // clean soundscape type for custom marker
+        if (row.Type == 'F&E') {
+            row.Type = fulloflifeExciting
+        } else if (row.Type == 'B&L') {
+            row.Type = boringLifeless
+        } else if (row.Type == 'C&T') {
+            row.Type = calmTranquil
+        } else if (row.Type == 'C&R') {
+            row.Type = chaoticRestless
+        } else { row.Type = NULL};
+
         var marker = L.marker([
             parseFloat(row.Latitude), 
             parseFloat(row.Longitude)
-        ], { opacity: 1, icon: calmTranquil }).bindPopup(row.Title).openPopup();
+        ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
         marker.addTo(map);
     }
 });
