@@ -25,7 +25,7 @@ var LeafIcon = L.Icon.extend({
         // shadowUrl: 'leaf-shadow.png',
         iconSize:     [40, 40],
         // shadowSize:   [50, 64],
-        // iconAnchor:   [22, 94],
+        iconAnchor:   [20, 40],
         // shadowAnchor: [4, 62],
         popupAnchor:  [0, -25]
     }
@@ -35,11 +35,7 @@ var chaoticRestless = new LeafIcon({iconUrl: '../../static/images/customIcons/pi
     calmTranquil = new LeafIcon({iconUrl: '../../static/images/customIcons/green-marker.png'}),
     boringLifeless = new LeafIcon({iconUrl: '../../static/images/customIcons/black-marker.png'});
 
-// manually add markers
-// var marker = L.marker([1.320611, 103.81609]).addTo(map);
-// marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-
-// get map data
+// add markers
 $.get('../../static/locations.csv', function(csvString) {
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
@@ -48,8 +44,7 @@ $.get('../../static/locations.csv', function(csvString) {
     // For each row in data, create a marker and add it to the map
     for (var i in data) {
         var row = data[i];
-
-        // clean soundscape type for custom marker
+        // data clean soundscape type for custom marker
         if (row.Type == 'F&E') {
             row.Type = fulloflifeExciting
         } else if (row.Type == 'B&L') {
@@ -59,7 +54,7 @@ $.get('../../static/locations.csv', function(csvString) {
         } else if (row.Type == 'C&R') {
             row.Type = chaoticRestless
         } else { row.Type = NULL};
-
+        // create marker
         var marker = L.marker([
             parseFloat(row.Latitude), 
             parseFloat(row.Longitude)
