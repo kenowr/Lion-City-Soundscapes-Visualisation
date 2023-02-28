@@ -84,7 +84,7 @@ $.get('../../static/locations.csv', function(csvString) {
             ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
             chaoticRestless_layer.addLayer(marker);
             chaoticRestless_array.push(marker);
-            
+
         } else ( null );
     }
 });
@@ -122,5 +122,6 @@ var overlayMaps = {
 // add overlay layers to map and pass an empty object for the base layers argument
 var layerControl = L.control.layers({}, overlayMaps, {
     position: 'topleft',
+    // collapsed: false,
     className: 'typesLayerControl'
 }).addTo(map);

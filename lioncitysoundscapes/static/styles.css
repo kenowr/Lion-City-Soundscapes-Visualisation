@@ -56,6 +56,14 @@ body {
   left: 0%;
 }
 
+/* leaflet layer control button */
 .leaflet-top .leaflet-control {
   top: 50px;
+}
+
+/* leaflet layer control panel */
+.leaflet-control-layers-expanded {
+  font-family: 'Overpass';
+  color: #FFFFFE;
+  background: #242629;
 }
