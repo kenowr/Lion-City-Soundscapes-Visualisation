@@ -26,7 +26,7 @@ const calmTranquil_array = [];
 const boringLifeless_array = [];
 
 // add markers
-$.get('../../static/locations.csv', function(csvString) {
+$.get('../../static/csv/locations.csv', function(csvString) {
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
     console.log(data);
