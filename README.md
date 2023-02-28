@@ -93,12 +93,11 @@ Before setting up the project, make sure the following has been installed:
   ```py
   SECRET_KEY = 'ENTER YOUR SECRET_KEY'
   ```
-
-### Running the Server
-Navigate to the cloned project directory 'lioncitysoundscapes' and run:
-```sh
-python manage.py runserver
-```
+  
+- Run the Server:
+  ```sh
+  python manage.py runserver
+  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
