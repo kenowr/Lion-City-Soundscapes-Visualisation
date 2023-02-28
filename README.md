@@ -91,7 +91,7 @@ Before setting up the project, make sure the following has been installed:
 - Navigate to `settings.py` of the cloned project and paste your `SECRET_KEY`:
 
   ```py
-  SECRET_KEY = "ENTER YOUR SECRET_KEY"
+  SECRET_KEY = ENTER YOUR SECRET_KEY
   ```
 
 - Run the server
