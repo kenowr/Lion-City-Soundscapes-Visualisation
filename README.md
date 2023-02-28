@@ -10,6 +10,7 @@
     An interactive map web application for characteristic soundscapes in Singapore
     <br />
     <a href="https://github.com/nemopotatoes/Lion-City-Soundscapes-Visualisation"><strong>Explore the docs »</strong></a>
+    <br />
   </p>
 </div>
 
@@ -71,30 +72,30 @@ Before setting up the project, make sure the following has been installed:
 
 ### Installation
 
-Clone the repo
+- Clone the repo:
 
-```sh
-git clone https://github.com/nemopotatoes/Lion-City-Soundscapes-Visualisation.git
-```
+  ```sh
+  git clone https://github.com/nemopotatoes/Lion-City-Soundscapes-Visualisation.git
+  ```
 
-Install project dependencies in your project directory:
+- Install project dependencies in your project directory:
 
-```sh
-pip install -r requirements.txt
-```
-
-Generate a new SECRET_KEY
+  ```sh
+  pip install -r requirements.txt
+  ```
 
 - Navigate to the cloned project directory 'lioncitysoundscapes' and create a new project by running `django-admin startproject newproject .`
+
 - Go to to `settings.py` in the new project and copy the `SECRET_KEY`
+
 - Navigate to `settings.py` of the cloned project and paste your `SECRET_KEY`:
 
-```py
-SECRET_KEY = "ENTER YOUR SECRET_KEY"
-```
+  ```py
+  SECRET_KEY = "ENTER YOUR SECRET_KEY"
+  ```
 
-Run the server
-Navigate to the cloned project directory 'lioncitysoundscapes' and run `python manage.py runserver`
+- Run the server
+  Navigate to the cloned project directory 'lioncitysoundscapes' and run `python manage.py runserver`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
