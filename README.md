@@ -59,15 +59,15 @@ Before setting up the project, make sure the following has been installed:
 
 - Python
 
-- Django Virtual Enviornment
+- Django
 
   ```sh
-  pip install virtualenv
+  pip install django
   ```
 
 - Django Virtual Enviornment
   ```sh
-  pip install django
+  pip install virtualenv
   ```
 
 ### Installation
@@ -91,11 +91,13 @@ Before setting up the project, make sure the following has been installed:
 - Navigate to `settings.py` of the cloned project and paste your `SECRET_KEY`:
 
   ```py
-  SECRET_KEY = "ENTER YOUR SECRET_KEY"
+  SECRET_KEY = 'ENTER YOUR SECRET_KEY'
   ```
-
-- Run the server
-  Navigate to the cloned project directory 'lioncitysoundscapes' and run `python manage.py runserver`
+  
+- Run the Server:
+  ```sh
+  python manage.py runserver
+  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
