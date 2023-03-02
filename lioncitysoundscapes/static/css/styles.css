@@ -92,3 +92,8 @@ body {
   z-index: 3000;
 }
 
+/* remove scrollbar from leaflet layer control */
+.leaflet-control-layers-list {
+  height: auto !important;
+  overflow: hidden;
+}

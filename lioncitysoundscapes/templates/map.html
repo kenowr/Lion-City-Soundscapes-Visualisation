@@ -10,12 +10,12 @@
   <title>Lion City Soundscapes</title>
 
   <!-- leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
-    integrity="sha384-gy+McRQ2UTevvOv+GJ8PZ6U5H3UrmvROB1W6JlV7I1LYY0+V7bJmbtw8XVZ68hr0" 
-    crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+
+  <!-- leaflet popup window -->
+  <link rel="stylesheet" href="{% static '/css/popup-window.css' %}" />
+  <script src="{% static '/js/popup-window.js' %}"></script>
 
   <!-- jQuery  -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -24,9 +24,9 @@
   <!-- papaparse -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
 
-  <!-- onemap -->
+  <!-- onemap
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
-  <script src="https://cdn.onemap.sg/leaflet/onemap-leaflet.js"></script>
+  <script src="https://cdn.onemap.sg/leaflet/onemap-leaflet.js"></script> -->
 
   <!-- Overpass font -->
   <link href='https://fonts.googleapis.com/css?family=Overpass' rel='stylesheet'>
@@ -37,9 +37,6 @@
   <!-- Load icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- styled layer control -->
-  <!-- <link rel="stylesheet" href="../../static/css/leaflet-sidebar.css" />
-	<script src="../../static/js/leaflet-sidebar.js"></script> -->
 </head>
 
   <body>

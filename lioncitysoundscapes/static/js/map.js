@@ -23,6 +23,9 @@ var chaoticRestless = new LeafIcon({iconUrl: '../../static/images/customIcons/pi
     calmTranquil = new LeafIcon({iconUrl: '../../static/images/customIcons/green-marker.png'}),
     boringLifeless = new LeafIcon({iconUrl: '../../static/images/customIcons/black-marker.png'});
 
+// manual marker for debugging
+// var marker = L.marker([1.3452334942438957, 103.77095067139814],{title:"Click to show window." }).addTo(map);
+
 const fulloflifeExciting_array = [];
 const chaoticRestless_array = [];
 const calmTranquil_array = [];
@@ -40,54 +43,68 @@ $.get('../../static/csv/locations.csv', function(csvString) {
 
         // data clean soundscape type for custom marker
         if (row.Type == 'F&E') {
-
             row.Type = fulloflifeExciting;
-
             // create marker, add it to layer, and push into array
             var marker = L.marker([
                 parseFloat(row.Latitude), 
                 parseFloat(row.Longitude)
-            ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
+            ], { opacity: 1, icon: row.Type });
+            marker.on('click',function(){
+                var win =  L.control.window(map,{title:'Hello world!', maxWidth:400, modal: true})
+                        .content('Description')
+                        .prompt({callback:function(){alert('This is called after OK click!')}})
+                        .show()
+            });
             fulloflifeExciting_layer.addLayer(marker);
             fulloflifeExciting_array.push(marker);
-
         } else if (row.Type == 'B&L') {
-
             row.Type = boringLifeless;
-
             // create marker, add it to layer, and push into array
             var marker = L.marker([
                 parseFloat(row.Latitude), 
                 parseFloat(row.Longitude)
-            ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
+            ], { opacity: 1, icon: row.Type });
+            marker.on('click',function(){
 
+                var win =  L.control.window(map,{title:'Hello world!', maxWidth:400, modal: true})
+                        .content('Description')
+                        .prompt({callback:function(){alert('This is called after OK click!')}})
+                        .show()
+            });
             boringLifeless_layer.addLayer(marker);
             boringLifeless_array.push(marker);
-
         } else if (row.Type == 'C&T') {
-
             row.Type = calmTranquil;
-            
             // create marker, add it to layer, and push into array
             var marker = L.marker([
                 parseFloat(row.Latitude), 
                 parseFloat(row.Longitude)
-            ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
+            ], { opacity: 1, icon: row.Type });
+            marker.on('click',function(){
+
+                var win =  L.control.window(map,{title:'Hello world!', maxWidth:400, modal: true})
+                        .content('Description')
+                        .prompt({callback:function(){alert('This is called after OK click!')}})
+                        .show()
+            });
             calmTranquil_layer.addLayer(marker);
             calmTranquil_array.push(marker);
-
         } else if (row.Type == 'C&R') {
-
             row.Type = chaoticRestless;
-
             // create marker, add it to layer, and push into array
             var marker = L.marker([
                 parseFloat(row.Latitude), 
                 parseFloat(row.Longitude)
-            ], { opacity: 1, icon: row.Type }).bindPopup(row.Title).openPopup();
+            ], { opacity: 1, icon: row.Type });
+            marker.on('click',function(){
+
+                var win =  L.control.window(map,{title:'Hello world!', maxWidth:400, modal: true})
+                        .content('Description')
+                        .prompt({callback:function(){alert('This is called after OK click!')}})
+                        .show()
+            });
             chaoticRestless_layer.addLayer(marker);
             chaoticRestless_array.push(marker);
-
         } else;
     }
 });
