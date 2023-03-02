@@ -56,9 +56,29 @@ body {
   left: 0%;
 }
 
-/* leaflet layer control button */
-.leaflet-top .leaflet-control {
+/* leaflet layer control */
+/* .leaflet-top .leaflet-control {
   top: 50px;
+} */
+
+
+#btn {
+  position:fixed;
+  top: 65px;
+  left: 10px;
+  z-index:1000;
+  background:#242629;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.fa {
+  font-size: 20px !important;
+}
+
+.fa-search {
+  color: #FFFFFE;
 }
 
 /* leaflet layer control panel */
@@ -66,4 +86,9 @@ body {
   font-family: 'Overpass';
   color: #FFFFFE;
   background: #242629;
+  position: fixed;
+  width: 250px;
+  bottom: 10px;
+  z-index: 3000;
 }
+

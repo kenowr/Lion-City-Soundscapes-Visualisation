@@ -8,6 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lion City Soundscapes</title>
+
   <!-- leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
     integrity="sha384-gy+McRQ2UTevvOv+GJ8PZ6U5H3UrmvROB1W6JlV7I1LYY0+V7bJmbtw8XVZ68hr0" 
@@ -27,13 +28,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
   <script src="https://cdn.onemap.sg/leaflet/onemap-leaflet.js"></script>
 
+  <!-- Overpass font -->
+  <link href='https://fonts.googleapis.com/css?family=Overpass' rel='stylesheet'>
+
+  <!-- load css file -->
+  <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
+
+  <!-- Load icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- styled layer control -->
+  <!-- <link rel="stylesheet" href="../../static/css/leaflet-sidebar.css" />
+	<script src="../../static/js/leaflet-sidebar.js"></script> -->
 </head>
 
   <body>
-    <!-- navigation header -->
+
+    <!-- map header -->
     {% include "map-header.html" %}
 
-    <div id='mapdiv'></div>
+    <!-- map -->
+    <div id='mapdiv'>
+      <button id="btn"><i class="fa fa-search"></i></button>
+    </div>
     <script src="{% static '/js/map.js' %}"></script>
 
   </body>

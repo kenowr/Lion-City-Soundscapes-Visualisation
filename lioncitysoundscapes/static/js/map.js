@@ -85,7 +85,7 @@ $.get('../../static/csv/locations.csv', function(csvString) {
             chaoticRestless_layer.addLayer(marker);
             chaoticRestless_array.push(marker);
 
-        } else ( null );
+        } else;
     }
 });
 
@@ -111,7 +111,6 @@ var basemap = L.tileLayer('https://maps-{s}.onemap.sg/v3/Grey/{z}/{x}/{y}.png', 
 // set max bounds of map
 map.setMaxBounds([[1.50073, 104.1147], [1.16, 103.602]]);
 
-// initialise overlay maps 
 var overlayMaps = {
     "Full of Life and Exciting": fulloflifeExciting_layer,
     "Chaotic and Restless": chaoticRestless_layer,
@@ -122,6 +121,14 @@ var overlayMaps = {
 // add overlay layers to map and pass an empty object for the base layers argument
 var layerControl = L.control.layers({}, overlayMaps, {
     position: 'topleft',
-    // collapsed: false,
+    collapsed: false,
     className: 'typesLayerControl'
-}).addTo(map);
+}).addTo(map); 
+
+// button click layer control
+$('.leaflet-control-layers').hide();
+$('.leaflet-control-layers').css('top','100px');
+
+btn.onclick = function() {
+    $('.leaflet-control-layers').toggle();
+}
