@@ -106,7 +106,7 @@ Before setting up the project, make sure the following has been installed:
 ## Roadmap
 
 - [x] Set up Django project
-- [x] Set up Leaflet interactive map
+- [ ] Set up Leaflet interactive map
 - [ ] AWS Integration
 - [ ] Other Pages: About, Resources, Recordings, Contact
 - [ ] Admin Panel
