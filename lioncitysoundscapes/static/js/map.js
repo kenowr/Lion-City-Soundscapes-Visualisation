@@ -7,6 +7,9 @@ var map = L.map('mapdiv', {
 // zoom buttons to bottom right
 L.control.zoom({ position: 'bottomright' }).addTo(map);
 
+// disable double click zoom
+map.doubleClickZoom.disable(); 
+
 // custom marker icons
 var LeafIcon = L.Icon.extend({
     options: {
