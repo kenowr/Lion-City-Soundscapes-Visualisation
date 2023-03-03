@@ -40,73 +40,60 @@ $.get('../../static/csv/locations.csv', function(csvString) {
     // For each row in data, create a marker and add it to the map
     for (var i in data) {
         var row = data[i];
-
-        // data clean soundscape type for custom marker
-        if (row.Type == 'F&E') {
-            row.Type = fulloflifeExciting;
-            // create marker, add it to layer, and push into array
-            var marker = L.marker([
-                parseFloat(row.Latitude), 
-                parseFloat(row.Longitude)
-            ], { opacity: 1, icon: row.Type });
-            marker.on('click',function(){
-                var win =  L.control.window(map,{title:'Hello world!', maxWidth:400, modal: true})
-                        .content('Description')
-                        .prompt({callback:function(){alert('This is called after OK click!')}})
+    
+        // create a closure to preserve the value of row
+        (function(row) {
+            // data clean soundscape type for custom marker
+            if (row.Type == 'F&E') {
+                row.Type = fulloflifeExciting;
+                // create marker, add it to layer, and push into array
+                var marker = L.marker([
+                    parseFloat(row.Latitude), 
+                    parseFloat(row.Longitude)
+                ], { opacity: 1, icon: row.Type });
+                fulloflifeExciting_layer.addLayer(marker);
+                fulloflifeExciting_array.push(marker);
+            } else if (row.Type == 'B&L') {
+                row.Type = boringLifeless;
+                // create marker, add it to layer, and push into array
+                var marker = L.marker([
+                    parseFloat(row.Latitude), 
+                    parseFloat(row.Longitude)
+                ], { opacity: 1, icon: row.Type });
+                boringLifeless_layer.addLayer(marker);
+                boringLifeless_array.push(marker);
+            } else if (row.Type == 'C&T') {
+                row.Type = calmTranquil;
+                // create marker, add it to layer, and push into array
+                var marker = L.marker([
+                    parseFloat(row.Latitude), 
+                    parseFloat(row.Longitude)
+                ], { opacity: 1, icon: row.Type });
+                calmTranquil_layer.addLayer(marker);
+                calmTranquil_array.push(marker);
+            } else if (row.Type == 'C&R') {
+                row.Type = chaoticRestless;
+                // create marker, add it to layer, and push into array
+                var marker = L.marker([
+                    parseFloat(row.Latitude), 
+                    parseFloat(row.Longitude)
+                ], { opacity: 1, icon: row.Type });
+                chaoticRestless_layer.addLayer(marker);
+                chaoticRestless_array.push(marker);
+            } else;
+    
+            marker.on('click', function() {
+                // var vidEmbed = '';
+                var win =  L.control.window(map,{title:row.Title, modal: true})
+                        .content(
+                            '<div>' + row.vidEmbed + '</div>'
+                        )
+                        .prompt({callback:function(){}})
                         .show()
+                // console.log(row.Title);
             });
-            fulloflifeExciting_layer.addLayer(marker);
-            fulloflifeExciting_array.push(marker);
-        } else if (row.Type == 'B&L') {
-            row.Type = boringLifeless;
-            // create marker, add it to layer, and push into array
-            var marker = L.marker([
-                parseFloat(row.Latitude), 
-                parseFloat(row.Longitude)
-            ], { opacity: 1, icon: row.Type });
-            marker.on('click',function(){
-
-                var win =  L.control.window(map,{title:'Hello world!', maxWidth:400, modal: true})
-                        .content('Description')
-                        .prompt({callback:function(){alert('This is called after OK click!')}})
-                        .show()
-            });
-            boringLifeless_layer.addLayer(marker);
-            boringLifeless_array.push(marker);
-        } else if (row.Type == 'C&T') {
-            row.Type = calmTranquil;
-            // create marker, add it to layer, and push into array
-            var marker = L.marker([
-                parseFloat(row.Latitude), 
-                parseFloat(row.Longitude)
-            ], { opacity: 1, icon: row.Type });
-            marker.on('click',function(){
-
-                var win =  L.control.window(map,{title:'Hello world!', maxWidth:400, modal: true})
-                        .content('Description')
-                        .prompt({callback:function(){alert('This is called after OK click!')}})
-                        .show()
-            });
-            calmTranquil_layer.addLayer(marker);
-            calmTranquil_array.push(marker);
-        } else if (row.Type == 'C&R') {
-            row.Type = chaoticRestless;
-            // create marker, add it to layer, and push into array
-            var marker = L.marker([
-                parseFloat(row.Latitude), 
-                parseFloat(row.Longitude)
-            ], { opacity: 1, icon: row.Type });
-            marker.on('click',function(){
-
-                var win =  L.control.window(map,{title:'Hello world!', maxWidth:400, modal: true})
-                        .content('Description')
-                        .prompt({callback:function(){alert('This is called after OK click!')}})
-                        .show()
-            });
-            chaoticRestless_layer.addLayer(marker);
-            chaoticRestless_array.push(marker);
-        } else;
-    }
+        })(row); // immediately invoke the closure with row as an argument
+    }    
 });
 
 // layer groups
