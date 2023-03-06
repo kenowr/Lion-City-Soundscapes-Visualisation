@@ -7,11 +7,11 @@ L.Control.Window = L.Control.extend({
         className: 'control-window',
         visible: false,
         title: undefined,
-        closeButton: true,
+        closeButton: false,
         content: undefined,
         prompt: undefined,
         maxWidth: 600,
-        modal: false,
+        modal: true,
         position: 'center'
     },
     initialize: function (container, options) {
@@ -209,7 +209,7 @@ L.Control.Window = L.Control.extend({
 
         var cancel = this.options.prompt.buttonCancel || undefined;
 
-        var ok = this.options.prompt.buttonOK || 'OK';
+        var ok = this.options.prompt.buttonOK || undefined;
 
         var action = this.options.prompt.buttonAction || undefined;
 

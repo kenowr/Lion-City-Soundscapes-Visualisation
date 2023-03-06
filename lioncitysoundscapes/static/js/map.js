@@ -88,7 +88,7 @@ $.get('../../static/csv/locations.csv', function(csvString) {
                         .content(
                             '<div>' + row.vidEmbed + '</div>'
                         )
-                        .prompt({callback:function(){}})
+                        .prompt({})
                         .show()
                 // console.log(row.Title);
             });
