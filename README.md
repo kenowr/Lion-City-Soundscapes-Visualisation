@@ -44,6 +44,7 @@
 - Python
 - Django
 - LeafletJS
+- OneMap
 - Javascript
 - HTML/CSS
 
@@ -107,7 +108,8 @@ Before setting up the project, make sure the following has been installed:
 
 - [x] Set up Django project
 - [ ] Set up Leaflet interactive map
-- [ ] AWS Integration
+- [ ] Finalise soundscape recordings (locations.csv)
+- [ ] AWS Integration 
 - [ ] Other Pages: About, Resources, Recordings, Contact
 - [ ] Admin Panel
 
