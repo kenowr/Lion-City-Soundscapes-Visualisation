@@ -85,7 +85,10 @@ Before setting up the project, make sure the following has been installed:
   pip install -r requirements.txt
   ```
 
-- Navigate to the cloned project directory 'lioncitysoundscapes' and create a new project by running `django-admin startproject newproject .`
+- Navigate to the cloned project directory 'lioncitysoundscapes' and create a new project by running the following: 
+  ```sh
+  django-admin startproject newproject
+  ```
 
 - Go to to `settings.py` in the new project and copy the `SECRET_KEY`
 
@@ -107,7 +110,7 @@ Before setting up the project, make sure the following has been installed:
 ## Roadmap
 
 - [x] Set up Django project
-- [ ] Set up Leaflet interactive map
+- [x] Set up Leaflet interactive map
 - [ ] Finalise soundscape recordings (locations.csv)
 - [ ] AWS Integration 
 - [ ] Other Pages: About, Resources, Recordings, Contact
