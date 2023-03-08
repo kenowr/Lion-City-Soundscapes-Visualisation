@@ -71,6 +71,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 5px;
+  border: none;
 }
 
 .fa {
@@ -90,6 +91,10 @@ body {
   width: 250px;
   bottom: 10px;
   z-index: 3000;
+}
+
+.leaflet-touch .leaflet-control-layers {
+  border: 0px !important;
 }
 
 /* remove scrollbar from leaflet layer control */
