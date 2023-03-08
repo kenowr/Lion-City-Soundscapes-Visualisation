@@ -86,7 +86,9 @@ $.get('../../static/csv/locations.csv', function(csvString) {
                 // var vidEmbed = '';
                 var win =  L.control.window(map,{title:row.Title, modal: true})
                         .content(
-                            '<div>' + row.vidEmbed + '</div>'
+                            '<div><iframe width="560" height="315" src="' + 
+                            row.vidEmbed + 
+                            '" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
                         )
                         .prompt({})
                         .show()
