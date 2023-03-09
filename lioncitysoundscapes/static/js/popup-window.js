@@ -11,7 +11,7 @@ L.Control.Window = L.Control.extend({
         content: undefined,
         prompt: undefined,
         // maxWidth: 600,
-        modal: true,
+        modal: false,
         position: 'center'
     },
     initialize: function (container, options) {

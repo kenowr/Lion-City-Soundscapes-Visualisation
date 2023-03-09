@@ -84,9 +84,9 @@ $.get('../../static/csv/locations.csv', function(csvString) {
     
             marker.on('click', function() {
                 // var vidEmbed = '';
-                var win =  L.control.window(map,{title:row.Title, modal: true})
+                var win =  L.control.window(map,{title:row.Title, modal: false})
                         .content(
-                            '<div class="youtube-container"><iframe width="560" height="315" src="' + 
+                            '<div class="youtube-container"><iframe width="100%" height="100%" src="' + 
                             row.vidEmbed + 
                             '?&autoplay=1&loop=1&playlist=vjBrN18wiuE&modestbranding=1"frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
                         )
